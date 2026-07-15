@@ -61,7 +61,7 @@ export default async function Home() {
       <div className="mt-10 flex flex-wrap gap-4">
         <Link
           href="/trading"
-          className="rounded-lg bg-black px-6 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
+          className="rounded-lg bg-black px-6 py-3 text-sm font-semibold !text-white transition hover:bg-neutral-800"
         >
           Bắt đầu học
         </Link>
