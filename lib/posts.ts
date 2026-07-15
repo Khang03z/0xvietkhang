@@ -25,6 +25,7 @@ export type Post = {
   category: string;
   section: Category;
   readingTime: string;
+  coverImage?: string;
 };
 
 export type PostDetail = Post & {
@@ -60,6 +61,7 @@ export async function getPostsByCategory(
         category: data.category,
         section: category,
         readingTime: `${Math.ceil(stats.minutes)} phút đọc`,
+        coverImage: data.coverImage,
       };
     });
 
@@ -97,6 +99,7 @@ export async function getPostBySlug(
     section: category,
     contentHtml: processedContent.toString(),
     readingTime: `${Math.ceil(stats.minutes)} phút đọc`,
+    coverImage: data.coverImage,
   };
 }
 

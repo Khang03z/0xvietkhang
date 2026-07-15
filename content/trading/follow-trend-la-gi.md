@@ -3,6 +3,7 @@ title: "Follow Trend là gì?"
 description: "Tìm hiểu phương pháp giao dịch theo xu hướng và cách mình tiếp cận thị trường."
 date: "2026-07-15"
 category: "Trading"
+coverImage: "/images/articles/follow-trend.jpg"
 ---
 
 # Follow Trend là gì?

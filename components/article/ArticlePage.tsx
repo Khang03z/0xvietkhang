@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import type { PostDetail } from "@/lib/posts";
 import { formatDate } from "@/lib/formatDate";
 
@@ -25,15 +27,28 @@ export default function ArticlePage({
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-2 text-sm text-neutral-500">
-  <time dateTime={post.date}>
-    {formatDate(post.date)}
-  </time>
+            <time dateTime={post.date}>
+              {formatDate(post.date)}
+            </time>
 
-  <span>·</span>
+            <span>·</span>
 
-  <span>{post.readingTime}</span>
-</div>
+            <span>{post.readingTime}</span>
+          </div>
         </header>
+
+        {post.coverImage && (
+          <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-xl bg-neutral-100">
+            <Image
+              src={post.coverImage}
+              alt={post.title}
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </div>
+        )}
 
         <div
           className="article-content py-10"

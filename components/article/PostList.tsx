@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+
 import type { Post } from "@/lib/posts";
 import { formatDate } from "@/lib/formatDate";
 
@@ -18,29 +20,39 @@ export default function PostList({
   }
 
   return (
-    <div className="divide-y divide-neutral-200">
+    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {posts.map((post) => (
         <Link
           key={`${post.section}-${post.slug}`}
           href={`/${post.section}/${post.slug}`}
-          className="group block py-8"
+          className="group overflow-hidden rounded-xl border border-neutral-200 bg-white transition duration-200 hover:-translate-y-1 hover:shadow-lg"
         >
-          <div className="flex flex-col justify-between gap-4 md:flex-row">
-            <div>
-              <p className="text-sm font-medium text-neutral-500">
-                {post.category}
-              </p>
-
-              <h3 className="mt-2 text-2xl font-bold tracking-tight transition-colors group-hover:text-neutral-600">
-                {post.title}
-              </h3>
-
-              <p className="mt-3 max-w-2xl leading-7 text-neutral-600">
-                {post.description}
-              </p>
+          {post.coverImage && (
+            <div className="relative aspect-[16/9] overflow-hidden bg-neutral-100">
+              <Image
+                src={post.coverImage}
+                alt={post.title}
+                fill
+                className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </div>
+          )}
 
-            <div className="shrink-0 text-sm text-neutral-500">
+          <div className="p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-neutral-500">
+              {post.category}
+            </p>
+
+            <h3 className="mt-3 text-xl font-bold tracking-tight">
+              {post.title}
+            </h3>
+
+            <p className="mt-3 line-clamp-3 text-sm leading-6 text-neutral-600">
+              {post.description}
+            </p>
+
+            <div className="mt-6 text-sm text-neutral-500">
               {formatDate(post.date)} · {post.readingTime}
             </div>
           </div>
