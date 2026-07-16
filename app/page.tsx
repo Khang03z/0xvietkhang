@@ -2,6 +2,8 @@ import Link from "next/link";
 import PostList from "@/components/article/PostList";
 import { getAllPosts } from "@/lib/posts";
 import Image from "next/image";
+import Journey from "@/components/sections/Journey";
+
 const categories = [
   {
     title: "Trading",
@@ -156,8 +158,10 @@ export default async function Home() {
           </div>
 
           <PostList posts={latestPosts} />
+          <Journey />
         </div>
       </section>
     </main>
   );
 }
+

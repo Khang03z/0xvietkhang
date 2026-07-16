@@ -26,7 +26,11 @@ export default function RootLayout({
     <html lang="vi">
       <body className={geist.className}>
   <Header />
-  {children}
+
+  <main className="min-h-screen">
+    {children}
+  </main>
+
   <Footer />
 </body>
     </html>

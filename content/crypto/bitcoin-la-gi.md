@@ -3,7 +3,7 @@ title: "Bitcoin là gì?"
 description: "Những kiến thức nền tảng về Bitcoin dành cho người mới bắt đầu."
 date: "2026-07-15"
 category: "Crypto"
-coverImage: "/images/articles/bitcoin-la-gi.jpg"
+coverImage: "/images/articles/bitcoin.jpg"
 ---
 
 Bitcoin là một tài sản kỹ thuật số hoạt động trên một mạng lưới phi tập trung.
