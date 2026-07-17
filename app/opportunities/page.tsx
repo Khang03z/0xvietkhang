@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import PostList from "@/components/article/PostList";
+import { getPostsByCategory } from "@/lib/posts";
 
-export default function OpportunitiesPage() {
+export default async function OpportunitiesPage() {
+  const posts = await getPostsByCategory("opportunities");
+
   return (
     <main className="mx-auto min-h-screen max-w-7xl px-6 py-20">
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500">
@@ -17,12 +21,13 @@ export default function OpportunitiesPage() {
         Airdrop, testnet và những cách mình tìm kiếm cơ hội trong thị trường
         crypto.
       </p>
+
+      <div className="mt-20">
+        <PostList posts={posts} />
+      </div>
     </main>
   );
 }
-
-
-// app/opportunities/page.tsx
 
 export const metadata: Metadata = {
   title: "Cơ hội",

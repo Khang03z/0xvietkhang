@@ -43,3 +43,6 @@ export default async function OpportunityPostPage({
 
   return <ArticlePage post={post} />;
 }
+
+
+

@@ -25,3 +25,4 @@ export const metadata: Metadata = {
   description:
     "Kiến thức về Follow Trend, quản lý rủi ro và tâm lý giao dịch.",
 };
+
